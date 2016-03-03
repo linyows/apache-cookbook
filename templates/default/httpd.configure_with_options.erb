@@ -1,0 +1,11 @@
+#!/bin/bash
+
+./configure --prefix=<%= node['apacheee']['root'] %> \
+    --sysconfdir=<%= node['apacheee']['conf'] %> \
+    --exec-prefix=<%= node['apacheee']['exec'] %> \
+    --with-suexec-bin=<%= node['apacheee']['exec'] %> \
+    --enable-so \
+    --enable-ssl \
+    --enable-rewrite \
+    --enable-proxy \
+    --enable-mods-shared=all

@@ -1,0 +1,11 @@
+<%= node['apacheee']['log'] %>/*.log {
+        daily
+        rotate 32
+        compress
+        missingok
+        notifempty
+        sharedscripts
+        postrotate
+                [ -f <%= node['apacheee']['pid'] %> ] && kill -HUP `cat <%= node['apacheee']['pid'] %>`
+        endscript
+}
